@@ -1,0 +1,5 @@
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Jupyter Notebook metadata
+*.nbconvert.ipynb
