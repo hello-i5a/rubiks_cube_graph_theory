@@ -5,11 +5,11 @@ import matplotlib.animation as animation
 import random
 import heapq
 
-# Define a solved cube using face colors: U, D, F, B, L, R
-colors = ['W', 'Y', 'G', 'B', 'O', 'R']  # Up, Down, Front, Back, Left, Right
+
+colors = ['W', 'Y', 'G', 'B', 'O', 'R']
 faces = ['U', 'D', 'F', 'B', 'L', 'R']
 
-# Mapping of face rotation to adjacent edges
+
 move_map = {
     'U': [('B', 0), ('R', 0), ('F', 0), ('L', 0)],
     'D': [('F', 2), ('R', 2), ('B', 2), ('L', 2)],
