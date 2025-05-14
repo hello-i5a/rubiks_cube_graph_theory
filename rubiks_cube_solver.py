@@ -145,14 +145,50 @@ def is_solved(cube):
     return True
 
 
+# def heuristic(cube):
+#     score = 0
+#     for face in cube:
+#         center = cube[face][1][1]
+#         for row in cube[face]:
+#             for color in row:
+#                 if color != center:
+#                     score += 1
+#     return score
+
 def heuristic(cube):
     score = 0
+    incorrect_faces = {}
+
     for face in cube:
         center = cube[face][1][1]
-        for row in cube[face]:
-            for color in row:
+        face_grid = cube[face]
+        display_grid = []
+        incorrect_count = 0
+
+        for i in range(3):
+            row_display = []
+            for j in range(3):
+                color = face_grid[i][j]
                 if color != center:
+                    row_display.append(color.lower())  # Mark incorrect
+                    incorrect_count += 1
                     score += 1
+                else:
+                    row_display.append(color)
+            display_grid.append(row_display)
+
+        if incorrect_count > 0:
+            incorrect_faces[face] = (display_grid, incorrect_count)
+
+    # Print visual display of incorrect faces
+    if incorrect_faces:
+        print("\nIncorrect faces (lowercase = incorrect):")
+        for face, (grid, count) in incorrect_faces.items():
+            print(
+                f"\nFace {face} (center: {cube[face][1][1]}): {count}/9 incorrect")
+            for row in grid:
+                print(" ".join(row))
+
     return score
 
 
