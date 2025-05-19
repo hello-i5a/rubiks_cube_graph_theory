@@ -170,7 +170,7 @@ def heuristic(cube):
             for j in range(3):
                 color = face_grid[i][j]
                 if color != center:
-                    row_display.append(color.lower())  # Mark incorrect
+                    row_display.append(color.lower())
                     incorrect_count += 1
                     score += 1
                 else:
@@ -180,7 +180,6 @@ def heuristic(cube):
         if incorrect_count > 0:
             incorrect_faces[face] = (display_grid, incorrect_count)
 
-    # Print visual display of incorrect faces
     if incorrect_faces:
         print("\nIncorrect faces (lowercase = incorrect):")
         for face, (grid, count) in incorrect_faces.items():
