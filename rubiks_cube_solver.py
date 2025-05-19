@@ -100,7 +100,7 @@ def visualize_cube_state(cube, title='Cube State', ax=None):
         'R': (6, 3), 'B': (9, 3), 'D': (3, 0)
     }
     color_lookup = {
-        'W': 'lightgray',  # Changed from white to lightgray
+        'W': 'lightgray',
         'Y': 'yellow',
         'G': 'green',
         'B': 'blue',
